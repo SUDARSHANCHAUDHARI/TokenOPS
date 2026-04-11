@@ -1,0 +1,23 @@
+{
+  "name": "tokenops",
+  "version": "1.0.0",
+  "private": true,
+  "bin": {
+    "tokenops": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@tokenops/agents": "workspace:*",
+    "@tokenops/analytics": "workspace:*",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "ts-node": "^10.9.0",
+    "@types/node": "^22.0.0"
+  }
+}

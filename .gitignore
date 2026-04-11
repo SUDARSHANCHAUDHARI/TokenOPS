@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# pnpm
+# pnpm-lock.yaml is committed (lockfile)
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# TurboRepo
+.turbo/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# LeanCTX binary (download separately — see services/context-engine/README.md)
+services/context-engine/leanctx
+services/context-engine/leanctx.exe
+
+# Planning / spec docs (never push)
+PLAN_*.md
+SPEC_*.md
+PLUGIN_1_*.md

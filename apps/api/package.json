@@ -1,0 +1,24 @@
+{
+  "name": "@tokenops/api",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "start": "node dist/server.js",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@tokenops/agents": "workspace:*",
+    "@tokenops/analytics": "workspace:*",
+    "fastify": "^5.2.0",
+    "@fastify/cors": "^10.0.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "ts-node-dev": "^2.0.0",
+    "@types/node": "^22.0.0"
+  }
+}
