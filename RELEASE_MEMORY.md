@@ -42,3 +42,4 @@ Run build and verify CLI fallback without LeanCTX.
 
 - Updated `.env.example` to use `YOUR_OPENAI_API_KEY` and `YOUR_ANTHROPIC_API_KEY` instead of fake key-shaped values.
 - Current release type remains POC/local tool until build, CLI fixture, API/dashboard, and LeanCTX fallback are verified.
+- Polished README with POC/local status, technical decisions, setup, verification, known limits, and hosted API blockers.
