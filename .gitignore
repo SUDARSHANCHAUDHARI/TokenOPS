@@ -59,3 +59,5 @@ PLAN.md
 graphify-out/
 
 CLAUDE_TASKS.md
+
+*.tsbuildinfo

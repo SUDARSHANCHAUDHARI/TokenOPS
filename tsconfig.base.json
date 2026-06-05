@@ -3,7 +3,9 @@
     "target": "ES2022",
     "module": "CommonJS",
     "moduleResolution": "node",
-    "lib": ["ES2022"],
+    "lib": [
+      "ES2022"
+    ],
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -13,7 +15,22 @@
     "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "composite": true
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@tokenops/core": [
+        "packages/core/src/index.ts"
+      ],
+      "@tokenops/analytics": [
+        "packages/analytics/src/index.ts"
+      ],
+      "@tokenops/agents": [
+        "packages/agents/src/index.ts"
+      ]
+    }
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
