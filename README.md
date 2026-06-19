@@ -95,4 +95,4 @@ Then verify:
 
 ## Author
 
-Built by **Sudarshan Chaudhari** — SudarshanTechLabs.
+Built by **[Sudarshan Chaudhari](https://github.com/SUDARSHANCHAUDHARI)** — SudarshanTechLabs.
