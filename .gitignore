@@ -61,3 +61,5 @@ graphify-out/
 CLAUDE_TASKS.md
 
 *.tsbuildinfo
+
+repoguard-results/
