@@ -1,4 +1,5 @@
 import "dotenv/config";
+import * as path from "path";
 import Fastify from "fastify";
 import cors from "@fastify/cors";
 import { DebugAgent, TestAgent, ReviewAgent } from "@tokenops/agents";
@@ -15,6 +16,9 @@ const agents = {
 } as const;
 
 type AgentName = keyof typeof agents;
+
+// /analyze may only read files under this root (no auth on this API)
+const analyzeRoot = path.resolve(process.env.ANALYZE_ROOT ?? process.cwd());
 
 // POST /analyze
 // Body: { agent: "debug" | "test" | "review", file: string }
@@ -33,7 +37,12 @@ app.post<{
     return reply.status(400).send({ error: "file path is required" });
   }
 
-  const result = await agents[agentName].run(file);
+  const resolved = path.resolve(analyzeRoot, file);
+  if (!resolved.startsWith(analyzeRoot + path.sep)) {
+    return reply.status(403).send({ error: `Path outside allowed root ${analyzeRoot}. Set ANALYZE_ROOT to change it.` });
+  }
+
+  const result = await agents[agentName].run(resolved);
   return result;
 });
 
@@ -47,8 +56,9 @@ app.get("/analytics", async () => {
 app.get("/health", async () => ({ status: "ok", service: "tokenops-api" }));
 
 const port = Number(process.env.API_PORT ?? 3001);
+const host = process.env.HOST ?? "127.0.0.1";
 
-app.listen({ port, host: "0.0.0.0" }, (err) => {
+app.listen({ port, host }, (err) => {
   if (err) {
     app.log.error(err);
     process.exit(1);

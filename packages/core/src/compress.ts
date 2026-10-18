@@ -1,9 +1,9 @@
-import { exec } from "child_process";
+import { execFile } from "child_process";
 import { promisify } from "util";
 import * as fs from "fs";
 import * as path from "path";
 
-const execAsync = promisify(exec);
+const execFileAsync = promisify(execFile);
 
 function resolveLeanCtxBinary(): string {
   // 1. Explicit env override
@@ -40,7 +40,7 @@ export async function compressFile(filePath: string): Promise<CompressResult> {
   let output: string;
 
   try {
-    const result = await execAsync(`"${binary}" compress "${filePath}"`);
+    const result = await execFileAsync(binary, ["compress", filePath]);
     output = result.stdout.trim();
   } catch {
     // LeanCTX binary not available — fall back to the raw file content

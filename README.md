@@ -68,6 +68,8 @@ OPENAI_API_KEY=YOUR_OPENAI_API_KEY
 ANTHROPIC_API_KEY=YOUR_ANTHROPIC_API_KEY
 ```
 
+The API binds to `127.0.0.1` by default (set `HOST` to change it), and `POST /analyze` only reads files under `ANALYZE_ROOT` (default: the current directory); other paths get a 403.
+
 ## Run
 
 ```bash
