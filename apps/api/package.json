@@ -12,7 +12,7 @@
   "dependencies": {
     "@tokenops/agents": "workspace:*",
     "@tokenops/analytics": "workspace:*",
-    "fastify": "^5.2.0",
+    "fastify": "^5.12.1",
     "@fastify/cors": "^10.0.0",
     "dotenv": "^16.4.0"
   },
