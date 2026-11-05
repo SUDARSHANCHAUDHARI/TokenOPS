@@ -27,7 +27,7 @@ app.post<{
 }>("/analyze", async (request, reply) => {
   const { agent: agentName, file } = request.body;
 
-  if (!agentName || !agents[agentName]) {
+  if (!agentName || !Object.hasOwn(agents, agentName)) {
     return reply.status(400).send({
       error: `Invalid agent. Valid agents: ${Object.keys(agents).join(", ")}`,
     });
