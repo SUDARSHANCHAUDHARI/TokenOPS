@@ -13,7 +13,7 @@ function resolveLeanCtxBinary(): string {
   // 2. Local services/context-engine (when running from monorepo root)
   const localBin = path.resolve(
     __dirname,
-    "../../../../services/context-engine/leanctx"
+    "../../../services/context-engine/leanctx"
   );
   if (fs.existsSync(localBin)) {
     return localBin;

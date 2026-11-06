@@ -76,7 +76,7 @@ async function main(): Promise<void> {
     review: () => new ReviewAgent().run(filePath),
   };
 
-  const agentFn = agentMap[command];
+  const agentFn = Object.hasOwn(agentMap, command) ? agentMap[command] : undefined;
   if (!agentFn) {
     console.error(`Unknown command: ${command}\n${USAGE}`);
     process.exit(1);
